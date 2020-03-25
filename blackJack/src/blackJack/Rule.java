@@ -15,10 +15,10 @@ public class Rule {
 				if(who.equals("dealer")) {
 					System.out.print("딜러 카드 : ? ");	
 				}else {
-					System.out.print("게이머 카드 : (" + deck.get(0).getPattern() + ", " + deck.get(0).getNumber() + ") ");
+					System.out.print("게이머 카드 : (" + deck.get(0).getPattern() + ", " + deck.get(0).getDenomination() + ") ");
 				}
 			}else {
-				System.out.print("(" + deck.get(i).getPattern() + ", " + deck.get(i).getNumber() + ") ");
+				System.out.print("(" + deck.get(i).getPattern() + ", " + deck.get(i).getDenomination() + ") ");
 				if(who.equals("dealer")) {
 					System.out.println();
 				}
@@ -41,7 +41,7 @@ public class Rule {
 		int sum = 0;
 		
 		for(int i = 0; i < deck.size(); i++) {
-			String number = deck.get(i).getNumber();
+			String number = deck.get(i).getDenomination();
 			if(number.equals("A")) {
 				sum += 1;
 			}else if(number.equals("J") || number.equals("Q") || number.equals("K")) {
