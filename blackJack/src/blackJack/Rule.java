@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Rule {
 
-	// Ä«µå Ãâ·Â
+	// ì¹´ë“œ ì¶œë ¥
 	public int printCard(String who, ArrayList<Card> deck) {
 		
 		Rule rule = new Rule(); 
@@ -13,9 +13,9 @@ public class Rule {
 			
 			if(i == 0){
 				if(who.equals("dealer")) {
-					System.out.print("µô·¯ Ä«µå : ? ");	
+					System.out.print("ë”œëŸ¬ ì¹´ë“œ : ? ");	
 				}else {
-					System.out.print("°ÔÀÌ¸Ó Ä«µå : (" + deck.get(0).getPattern() + ", " + deck.get(0).getDenomination() + ") ");
+					System.out.print("ê²Œì´ë¨¸ ì¹´ë“œ : (" + deck.get(0).getPattern() + ", " + deck.get(0).getDenomination() + ") ");
 				}
 			}else {
 				System.out.print("(" + deck.get(i).getPattern() + ", " + deck.get(i).getDenomination() + ") ");
@@ -26,7 +26,7 @@ public class Rule {
 			
 			if(i == deck.size() - 1 && who.equals("gamer")) {
 				sum = rule.getSum(deck);
-				System.out.println("ÃÑÇÕ : " + sum);
+				System.out.println("ì´í•© : " + sum);
 			}
 			
 		}
@@ -35,7 +35,7 @@ public class Rule {
 		
 	}
 	
-	// Ä«µå ÇÕ ±¸ÇÏ±â
+	// ì¹´ë“œ í•© êµ¬í•˜ê¸°
 	public int getSum(ArrayList<Card> deck) {
 
 		int sum = 0;
@@ -55,17 +55,17 @@ public class Rule {
 		return sum; 
 	}
 	
-	// ¹ö½ºÆ®
+	// ë²„ìŠ¤íŠ¸
 	public boolean isBust(String who, int sum) {
 		if(sum > 21) {
-			System.out.println(who + " Bust (ÃÑÇÕ : " + sum + ")");
+			System.out.println(who + " Bust (ì´í•© : " + sum + ")");
 			return true;
 		}else {
 			return false; 
 		}
 	}
 	
-	// ¹ö½ºÆ®
+	// ë²„ìŠ¤íŠ¸
 	public boolean isBust(int sum) {
 		if(sum > 21) {
 			return true;
@@ -74,7 +74,7 @@ public class Rule {
 		}
 	}
 	
-	// ´©°¡ 21ÀÌ¶û °¡±î¿îÁö ºñ±³
+	// ëˆ„ê°€ 21ì´ë‘ ê°€ê¹Œìš´ì§€ ë¹„êµ
 	public void whoWin(int dealerSum, int gamerSum) {
 		int dealer = 21 - dealerSum;
 		int gamer = 21 - gamerSum; 
@@ -87,7 +87,7 @@ public class Rule {
 			str += "DEALER";
 		}
 		
-		System.out.println(str + "(µô·¯ ÃÑÇÕ : " + dealerSum + ", °ÔÀÌ¸Ó ÃÑÇÕ : " + gamerSum + ")");
+		System.out.println(str + "(ë”œëŸ¬ ì´í•© : " + dealerSum + ", ê²Œì´ë¨¸ ì´í•© : " + gamerSum + ")");
 
 	}
 }

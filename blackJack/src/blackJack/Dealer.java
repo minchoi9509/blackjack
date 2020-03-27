@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dealer {
 	
-	// ÇÕ 17 ¹Ì¸¸ÀÎ °æ¿ì ÀÌ»óÀ¸·Î ¸¸µé±â
+	// í•© 17 ë¯¸ë§Œì¸ ê²½ìš° ì´ìƒìœ¼ë¡œ ë§Œë“¤ê¸°
 	public ArrayList<Card> dealerGetCard(int dealerSum, ArrayList<Card> deck, ArrayList<Card> dealerCard) {
 		Dealer dealer = new Dealer(); 
 		Rule rule = new Rule(); 
