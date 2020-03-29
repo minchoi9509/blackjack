@@ -20,7 +20,7 @@ public class Gamer implements Player {
 	@Override
 	public void printCards() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("보유 카드 : ");
+		sb.append("Gamer's Card : ");
 		
 		for(Card card : deck) {
 			sb.append(card.toString());

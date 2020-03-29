@@ -49,7 +49,6 @@ public class CardDeck {
 		return deck; 
 	}
 	
-	// 카드 나누기
 	public Card splitCard() {
 		return deck.pop();
 	}
