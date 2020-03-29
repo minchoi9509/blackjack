@@ -27,7 +27,17 @@ public class Gamer implements Player {
 			sb.append(" ");
 		}
 		
-		System.out.println(sb.toString());
+		System.out.println(sb.toString() + " 총합 : " + this.getSum());
+		
+	}
+	
+	@Override
+	public int getSum() {
+		int sum = 0; 
+		for(Card card : deck) {
+			sum += card.getPoint();
+		}
+		return sum; 
 	}
 
 }

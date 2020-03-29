@@ -22,6 +22,7 @@ public class CardDeck {
 			for(int i = 1; i <= CARD_CNT; i++) {
 				
 				String number = ""; 
+				int point = 0; 
 				
 				switch(i) {
 				case 1 :
@@ -41,7 +42,15 @@ public class CardDeck {
 					break;
 				}
 				
-				Card card = new Card(pattern, number); 
+				if(i == 1) {
+					point = 1;
+				}else if(i >= 11) {
+					point = 10;
+				}else {
+					point = i; 
+				}
+				
+				Card card = new Card(pattern, number, point); 
 				deck.add(card); 			
 			}
 		}

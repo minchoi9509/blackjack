@@ -17,11 +17,11 @@ public class BlackJack {
 		CardDeck cardDeck = new CardDeck(); 
 		
 		initGame(cardDeck, gamer, dealer); 
-		playingGame(br, cardDeck, gamer); 
+		playingGame(br, cardDeck, gamer, dealer); 
 		
 	}
 	
-	private void playingGame(BufferedReader br, CardDeck cardDeck, Gamer gamer) throws IOException {
+	private void playingGame(BufferedReader br, CardDeck cardDeck, Gamer gamer, Dealer dealer) throws IOException {
 		while(true) {
 			System.out.println("1.hit 2.stand 0.Close");
 			String answer = br.readLine();
@@ -31,7 +31,8 @@ public class BlackJack {
 				gamer.getCard(card);
 				gamer.printCards();
 			}else if(answer.equals("2")){
-				// 승패 확인
+				// 딜러 합 확인 뒤 승패 결정
+				dealer.checkDealerCards(cardDeck);
 			}else {
 				// 게임 종료
 				break;

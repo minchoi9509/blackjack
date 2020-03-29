@@ -20,32 +20,53 @@ public class Dealer implements Player {
 	public void printCards() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Dealer's Card : ");
-		
+				
 		for(int i = 0; i < deck.size(); i++) {
+			
+			Card card = deck.get(i);
 			if (i == 0) {
 				sb.append("(?) ");
 			}else {
-				sb.append(deck.get(i).toString());
+				sb.append(card.toString());
 				sb.append(" "); 
 			}
+			
 		}
 		
 		System.out.println(sb.toString());
 	}
 	
-	// 합 17 미만인 경우 이상으로 만들기
-//	public ArrayList<Card> dealerGetCard(int dealerSum, ArrayList<Card> deck, ArrayList<Card> dealerCard) {
-//		Dealer dealer = new Dealer(); 
-//		Rule rule = new Rule(); 
-//		int sum = dealerSum; 
-//		
-//		while(sum < 17) {
-//			Card card = dealer.getCard(deck);
-//			dealerCard.add(card);
-//			sum = rule.getSum(dealerCard);
-//		}
-//		
-//		return dealerCard; 
-//	}
+	public void printCards(String last) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Dealer's Card : ");
+		for(Card card : deck) {
+			sb.append(card.toString());
+			sb.append(" "); 
+		}
+		
+		System.out.println(sb.toString());
+	}
 	
+	@Override
+	public int getSum() {
+		int sum = 0; 
+		for(Card card : deck) {
+			sum += card.getPoint();
+		}
+		return sum; 
+	}
+	
+	// 합 16 이하인지 확인
+	private boolean isLessThan() {
+		return this.getSum() <= 16;
+	}
+	
+	// 합이 16 이하인 경우 이상으로 만들기 
+	public void checkDealerCards(CardDeck cardDeck) {
+		while(isLessThan()) {
+			Card card = cardDeck.splitCard();
+			this.getCard(card);
+		}
+	}	
+
 }
