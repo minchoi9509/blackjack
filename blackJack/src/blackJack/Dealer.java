@@ -5,9 +5,14 @@ import java.util.Stack;
 public class Dealer implements Player {
 	
 	private Stack<Card> deck;
+	private static final String NAME = "Dealer";
 	
 	public Dealer() {
 		deck = new Stack<Card>(); 
+	}
+	
+	public String getName() {
+		return NAME;
 	}
 
 	@Override
@@ -41,10 +46,9 @@ public class Dealer implements Player {
 		sb.append("Dealer's Card : ");
 		for(Card card : deck) {
 			sb.append(card.toString());
-			sb.append(" "); 
 		}
 		
-		System.out.println(sb.toString());
+		System.out.println(sb.toString() + " 총합 : " + this.getSum());
 	}
 	
 	@Override

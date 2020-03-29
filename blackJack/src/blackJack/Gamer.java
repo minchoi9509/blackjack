@@ -5,9 +5,14 @@ import java.util.Stack;
 public class Gamer implements Player {
 
 	private Stack<Card> deck;
+	private static final String NAME = "Gamer";
 	
 	public Gamer() {
 		deck = new Stack<Card>(); 
+	}
+	
+	public String getName() {
+		return NAME;
 	}
 	
 	// 카드 받음
